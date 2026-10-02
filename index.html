@@ -1,0 +1,1579 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta name="robots" content="noindex, nofollow" />
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Arizona Beauty House — Morning Command Center</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=DM+Sans:wght@300;400;500;600&display=swap');
+
+:root {
+  --purple:      #4B0082;
+  --purple-mid:  #6B2FA0;
+  --purple-soft: #9B59B6;
+  --purple-pale: #EDE4F5;
+  --gold:        #C9A84C;
+  --gold-light:  #E8D49A;
+  --gold-pale:   #FAF5E6;
+  --cream:       #FDFAF5;
+  --cream-dark:  #F0EAE0;
+  --charcoal:    #1E1A2E;
+  --text-mid:    #4A4060;
+  --text-light:  #8A7FA0;
+  --border:      rgba(75,0,130,0.12);
+  --shadow:      0 2px 16px rgba(30,26,46,0.08);
+  --green:       #2E7D5A;
+  --green-pale:  #E8F5EF;
+  --amber:       #C67C00;
+  --amber-pale:  #FFF3DC;
+  --red:         #B03030;
+  --red-pale:    #FDEAEA;
+  --pink:        #A0286A;
+  --pink-pale:   #FFF0F5;
+  --radius:      12px;
+  --radius-sm:   8px;
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body {
+  font-family: 'DM Sans', sans-serif;
+  background: var(--cream);
+  color: var(--charcoal);
+  line-height: 1.6;
+  overflow-x: hidden;
+}
+
+/* TOPBAR */
+.topbar {
+  background: var(--purple);
+  padding: 10px 28px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  position: sticky;
+  top: 0;
+  z-index: 200;
+  box-shadow: 0 2px 12px rgba(30,26,46,0.3);
+}
+.topbar-brand {
+  font-family: 'Cormorant Garamond', serif;
+  color: var(--gold);
+  font-size: 15px;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+}
+.topbar-sub {
+  font-size: 11px;
+  color: rgba(255,255,255,0.5);
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  margin-top: 1px;
+}
+.topbar-right {
+  text-align: right;
+}
+.topbar-date {
+  font-size: 13px;
+  color: var(--gold-light);
+  font-weight: 500;
+}
+.topbar-time {
+  font-size: 11px;
+  color: rgba(255,255,255,0.45);
+  margin-top: 2px;
+}
+
+/* HERO */
+.hero {
+  background: linear-gradient(145deg, #1E1A2E 0%, #3A1060 55%, #4B0082 100%);
+  padding: 40px 40px 48px;
+  position: relative;
+  overflow: hidden;
+}
+.hero::before {
+  content: '';
+  position: absolute;
+  top: -80px; right: -80px;
+  width: 360px; height: 360px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(201,168,76,0.14) 0%, transparent 65%);
+  pointer-events: none;
+}
+.hero-greeting {
+  font-size: 11px;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--gold);
+  margin-bottom: 8px;
+  opacity: 0.9;
+}
+.hero h1 {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(26px, 4vw, 42px);
+  font-weight: 300;
+  color: #fff;
+  line-height: 1.2;
+  margin-bottom: 6px;
+}
+.hero h1 em { font-style: italic; color: var(--gold-light); }
+.hero-tagline {
+  font-size: 13px;
+  color: rgba(255,255,255,0.5);
+  margin-bottom: 28px;
+}
+
+/* ATTENTION NEEDED — Hero Banner */
+.attention-banner {
+  background: rgba(176,48,48,0.18);
+  border: 1px solid rgba(176,48,48,0.35);
+  border-radius: var(--radius);
+  padding: 20px 24px;
+  margin-top: 8px;
+}
+.attention-banner-header {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 14px;
+}
+.attention-banner-title {
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: #F4A0A0;
+}
+.attention-count {
+  background: var(--red);
+  color: #fff;
+  font-size: 11px;
+  font-weight: 700;
+  border-radius: 10px;
+  padding: 2px 8px;
+}
+.attention-items {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+.attention-chip {
+  background: rgba(255,255,255,0.08);
+  border: 1px solid rgba(255,255,255,0.15);
+  border-radius: 20px;
+  padding: 5px 14px;
+  font-size: 12px;
+  color: #fff;
+  white-space: nowrap;
+}
+.attention-chip.urgent {
+  background: rgba(176,48,48,0.35);
+  border-color: rgba(176,48,48,0.5);
+  color: #F4A0A0;
+}
+
+/* NAV */
+.nav-wrapper {
+  background: #fff;
+  border-bottom: 1px solid var(--border);
+  padding: 0 24px;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: none;
+  position: sticky;
+  top: 44px;
+  z-index: 100;
+}
+.nav-wrapper::-webkit-scrollbar { display: none; }
+.nav-pills {
+  display: flex;
+  gap: 4px;
+  padding: 10px 0;
+  min-width: max-content;
+}
+.nav-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 6px 14px;
+  border-radius: 20px;
+  font-size: 12px;
+  font-weight: 500;
+  color: var(--text-mid);
+  text-decoration: none;
+  border: 1px solid transparent;
+  white-space: nowrap;
+  transition: all 0.15s;
+}
+.nav-pill:hover, .nav-pill.active {
+  background: var(--purple-pale);
+  color: var(--purple);
+  border-color: rgba(75,0,130,0.15);
+}
+.dot { width: 6px; height: 6px; border-radius: 50%; flex-shrink: 0; }
+.dot-green  { background: var(--green); }
+.dot-amber  { background: var(--amber); }
+.dot-red    { background: var(--red); }
+.dot-purple { background: var(--purple-soft); }
+.dot-gold   { background: var(--gold); }
+.dot-pink   { background: var(--pink); }
+
+/* PAGE */
+.page {
+  max-width: 1020px;
+  margin: 0 auto;
+  padding: 36px 24px 80px;
+}
+
+/* SECTION */
+.section {
+  margin-bottom: 52px;
+  scroll-margin-top: 100px;
+}
+.section-header {
+  display: flex;
+  align-items: flex-start;
+  gap: 14px;
+  margin-bottom: 18px;
+}
+.section-icon {
+  width: 38px; height: 38px;
+  border-radius: 10px;
+  background: var(--purple-pale);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 18px;
+  flex-shrink: 0;
+  margin-top: 3px;
+}
+.section-title {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 24px;
+  font-weight: 400;
+  color: var(--charcoal);
+  line-height: 1.2;
+}
+.section-desc {
+  font-size: 12px;
+  color: var(--text-light);
+  margin-top: 2px;
+}
+.divider { height: 1px; background: var(--border); margin-bottom: 20px; }
+
+/* GRID */
+.grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
+.grid-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; }
+.grid-4 { display: grid; grid-template-columns: repeat(4, 1fr); gap: 12px; }
+@media (max-width: 700px) {
+  .grid-2, .grid-3, .grid-4 { grid-template-columns: 1fr; }
+}
+@media (min-width: 701px) and (max-width: 900px) {
+  .grid-3 { grid-template-columns: 1fr 1fr; }
+  .grid-4 { grid-template-columns: 1fr 1fr; }
+}
+
+/* CARDS */
+.card {
+  background: #fff;
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 20px;
+  box-shadow: var(--shadow);
+}
+.card-sm {
+  background: #fff;
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
+  padding: 14px 16px;
+  box-shadow: 0 1px 5px rgba(30,26,46,0.05);
+  margin-bottom: 10px;
+}
+.card-gold { background: linear-gradient(135deg,#FAF5E6,#FFF9EE); border-color: var(--gold-light); }
+.card-title { font-size: 13px; font-weight: 600; color: var(--charcoal); margin-bottom: 4px; }
+.card-value {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 34px;
+  font-weight: 600;
+  line-height: 1;
+  color: var(--purple);
+}
+.card-label {
+  font-size: 10px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.07em;
+  color: var(--text-light);
+  margin-top: 4px;
+}
+.card-sub { font-size: 11px; color: var(--text-light); margin-top: 3px; }
+
+/* BADGES */
+.badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  padding: 3px 9px;
+  border-radius: 20px;
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  white-space: nowrap;
+}
+.badge-green  { background: var(--green-pale);  color: var(--green); }
+.badge-amber  { background: var(--amber-pale);  color: var(--amber); }
+.badge-red    { background: var(--red-pale);    color: var(--red); }
+.badge-purple { background: var(--purple-pale); color: var(--purple); }
+.badge-pink   { background: var(--pink-pale);   color: var(--pink); }
+.badge-gray   { background: #F0EAE0;            color: var(--text-mid); }
+
+/* APPOINTMENT ROW */
+.appt-row {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding: 12px 14px;
+  background: #fff;
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
+  margin-bottom: 8px;
+}
+.appt-time {
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--purple);
+  min-width: 52px;
+  flex-shrink: 0;
+}
+.appt-info { flex: 1; min-width: 0; }
+.appt-name { font-size: 13px; font-weight: 600; color: var(--charcoal); }
+.appt-service { font-size: 11px; color: var(--text-light); margin-top: 1px; }
+.appt-badge { flex-shrink: 0; }
+.appt-row.vip { border-left: 3px solid var(--gold); }
+.appt-row.cancelled { opacity: 0.55; background: #FAFAFA; }
+.appt-row.open { border: 1px dashed rgba(46,125,90,0.35); background: var(--green-pale); }
+
+/* TODO LIST */
+.todo-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  padding: 12px 14px;
+  background: #fff;
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
+  margin-bottom: 8px;
+  cursor: pointer;
+  transition: background 0.12s;
+}
+.todo-item:hover { background: var(--purple-pale); }
+.todo-item.done { opacity: 0.5; }
+.todo-item.done .todo-label { text-decoration: line-through; }
+.todo-check {
+  width: 18px; height: 18px;
+  border: 2px solid var(--purple-soft);
+  border-radius: 4px;
+  flex-shrink: 0;
+  margin-top: 1px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 11px;
+  color: #fff;
+  transition: all 0.15s;
+}
+.todo-item.done .todo-check {
+  background: var(--green);
+  border-color: var(--green);
+}
+.todo-label { font-size: 13px; color: var(--charcoal); font-weight: 500; flex: 1; }
+.todo-tag {
+  font-size: 10px;
+  font-weight: 600;
+  padding: 2px 7px;
+  border-radius: 4px;
+  flex-shrink: 0;
+  margin-top: 1px;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+.tag-urgent { background: var(--red-pale); color: var(--red); }
+.tag-today  { background: var(--amber-pale); color: var(--amber); }
+.tag-week   { background: var(--purple-pale); color: var(--purple-mid); }
+
+/* STAFF ROW */
+.staff-row {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 11px 14px;
+  background: #fff;
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
+  margin-bottom: 8px;
+}
+.staff-avatar {
+  width: 32px; height: 32px;
+  border-radius: 50%;
+  background: var(--purple-pale);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--purple);
+  flex-shrink: 0;
+}
+.staff-name { font-size: 13px; font-weight: 600; color: var(--charcoal); }
+.staff-role { font-size: 11px; color: var(--text-light); }
+.staff-right { margin-left: auto; display: flex; gap: 6px; flex-wrap: wrap; justify-content: flex-end; }
+
+/* EVENT ROW */
+.event-row {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding: 10px 14px;
+  background: #fff;
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
+  margin-bottom: 8px;
+}
+.event-date-block {
+  text-align: center;
+  min-width: 38px;
+  flex-shrink: 0;
+}
+.event-month { font-size: 9px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.07em; color: var(--purple-soft); }
+.event-day { font-family: 'Cormorant Garamond', serif; font-size: 22px; font-weight: 600; color: var(--purple); line-height: 1; }
+.event-info { flex: 1; }
+.event-name { font-size: 13px; font-weight: 600; color: var(--charcoal); }
+.event-detail { font-size: 11px; color: var(--text-light); margin-top: 1px; }
+
+/* INVENTORY ROW */
+.inv-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px 14px;
+  border-radius: var(--radius-sm);
+  margin-bottom: 8px;
+  border: 1px solid var(--border);
+  background: #fff;
+  gap: 12px;
+}
+.inv-row.critical { background: var(--red-pale); border-color: rgba(176,48,48,0.2); }
+.inv-row.low { background: var(--amber-pale); border-color: rgba(198,124,0,0.2); }
+.inv-name { font-size: 13px; font-weight: 500; color: var(--charcoal); }
+.inv-detail { font-size: 11px; color: var(--text-light); margin-top: 1px; }
+
+/* REVIEW ROW */
+.review-row {
+  background: #fff;
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
+  padding: 14px 16px;
+  margin-bottom: 10px;
+}
+.review-header { display: flex; align-items: center; justify-content: space-between; margin-bottom: 6px; }
+.review-stars { color: var(--gold); font-size: 14px; letter-spacing: 1px; }
+.review-name { font-size: 12px; font-weight: 600; color: var(--charcoal); }
+.review-date { font-size: 11px; color: var(--text-light); }
+.review-body { font-size: 12px; color: var(--text-mid); line-height: 1.5; }
+.review-row.needs-response { border-left: 3px solid var(--amber); }
+
+/* MARKETING METRIC */
+.mkt-card {
+  background: #fff;
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
+  padding: 14px 16px;
+  text-align: center;
+}
+.mkt-num {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 28px;
+  font-weight: 600;
+  color: var(--purple);
+  line-height: 1;
+}
+.mkt-label { font-size: 10px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.06em; color: var(--text-light); margin-top: 4px; }
+.mkt-trend { font-size: 11px; color: var(--green); margin-top: 3px; }
+
+/* BILL ROW */
+.bill-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px 14px;
+  background: #fff;
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
+  margin-bottom: 8px;
+  gap: 12px;
+}
+.bill-name { font-size: 13px; font-weight: 500; color: var(--charcoal); }
+.bill-due { font-size: 11px; color: var(--text-light); margin-top: 1px; }
+.bill-amount {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 20px;
+  font-weight: 600;
+  color: var(--charcoal);
+  flex-shrink: 0;
+}
+.bill-section-label {
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  padding: 6px 0 8px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+/* CASH FLOW */
+.cashflow-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 12px;
+  margin-top: 12px;
+}
+.cf-card {
+  background: #fff;
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
+  padding: 16px;
+  text-align: center;
+}
+.cf-amount {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 26px;
+  font-weight: 600;
+  line-height: 1;
+}
+.cf-label { font-size: 10px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.07em; color: var(--text-light); margin-top: 5px; }
+
+/* AI PRIORITIES */
+.priority-card {
+  display: flex;
+  gap: 16px;
+  background: linear-gradient(135deg, #FAF5E6, #FFF9EE);
+  border: 1px solid var(--gold-light);
+  border-radius: var(--radius);
+  padding: 18px 20px;
+  margin-bottom: 12px;
+  align-items: flex-start;
+}
+.priority-num {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 32px;
+  font-weight: 600;
+  color: var(--gold);
+  line-height: 1;
+  flex-shrink: 0;
+  width: 28px;
+  text-align: center;
+}
+.priority-title { font-size: 14px; font-weight: 600; color: var(--charcoal); margin-bottom: 4px; }
+.priority-body { font-size: 12px; color: var(--text-mid); line-height: 1.5; }
+
+/* REVENUE PROGRESS */
+.revenue-bar-wrap {
+  background: var(--cream-dark);
+  border-radius: 6px;
+  height: 10px;
+  overflow: hidden;
+  margin: 10px 0 6px;
+}
+.revenue-bar {
+  height: 100%;
+  border-radius: 6px;
+  background: linear-gradient(90deg, var(--purple), var(--purple-soft));
+  transition: width 0.4s;
+}
+.revenue-labels {
+  display: flex;
+  justify-content: space-between;
+  font-size: 11px;
+  color: var(--text-light);
+}
+
+/* UTIL */
+.flex-between { display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 8px; }
+.mt-12 { margin-top: 12px; }
+.mt-16 { margin-top: 16px; }
+.mb-12 { margin-bottom: 12px; }
+.small { font-size: 11px; color: var(--text-light); }
+.note { font-size: 11px; color: var(--text-light); font-style: italic; }
+
+/* BIRTHDAY CHIP */
+.bday-chip {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 10px 14px;
+  border-radius: var(--radius-sm);
+  background: var(--pink-pale);
+  border: 1px solid rgba(160,40,106,0.15);
+  margin-bottom: 8px;
+}
+.bday-icon { font-size: 18px; }
+.bday-name { font-size: 13px; font-weight: 600; color: var(--charcoal); }
+.bday-detail { font-size: 11px; color: var(--text-light); }
+
+/* FOOTER */
+.footer {
+  background: var(--charcoal);
+  padding: 28px 40px;
+  text-align: center;
+}
+.footer-brand { font-family: 'Cormorant Garamond', serif; color: var(--gold); font-size: 15px; letter-spacing: 0.04em; margin-bottom: 5px; }
+.footer-line { font-size: 11px; color: rgba(255,255,255,0.3); letter-spacing: 0.05em; }
+.footer-scripture { font-size: 11px; font-style: italic; color: rgba(255,255,255,0.2); margin-top: 7px; }
+
+/* MOBILE */
+@media (max-width: 640px) {
+  .hero { padding: 28px 20px 36px; }
+  .page { padding: 24px 14px 60px; }
+  .cashflow-grid { grid-template-columns: 1fr; }
+  .topbar-sub { display: none; }
+}
+
+/* SAMPLE LABEL */
+.sample-notice {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  background: rgba(201,168,76,0.15);
+  border: 1px solid rgba(201,168,76,0.35);
+  border-radius: 6px;
+  padding: 4px 10px;
+  font-size: 11px;
+  color: var(--gold);
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  margin-bottom: 12px;
+}
+</style>
+</head>
+<body>
+
+<!-- TOPBAR -->
+<div class="topbar">
+  <div>
+    <div class="topbar-brand">Arizona Beauty House</div>
+    <div class="topbar-sub">Morning Command Center &middot; Walk In Miracles</div>
+  </div>
+  <div class="topbar-right">
+    <div class="topbar-date" id="live-date">Tuesday, August 19, 2026</div>
+    <div class="topbar-time" id="live-time">Loading...</div>
+  </div>
+</div>
+
+<!-- HERO -->
+<div class="hero">
+  <div class="hero-greeting">Good morning, Michelle</div>
+  <h1>Your Business,<br><em>Before the Day Begins</em></h1>
+  <p class="hero-tagline">Everything you need to run Arizona Beauty House &mdash; in one place, every morning.</p>
+
+  <!-- ATTENTION NEEDED -->
+  <div class="attention-banner">
+    <div class="attention-banner-header">
+      <span style="font-size:16px;">⚠️</span>
+      <span class="attention-banner-title">Attention Needed Today</span>
+      <span class="attention-count">6 items</span>
+    </div>
+    <div class="attention-items">
+      <span class="attention-chip urgent">📸 Need laser models for Friday</span>
+      <span class="attention-chip urgent">💳 Rent due in 3 days</span>
+      <span class="attention-chip">🌴 Julie on vacation next week</span>
+      <span class="attention-chip urgent">📦 Numbing cream — reorder now</span>
+      <span class="attention-chip">📞 3 outstanding follow-ups</span>
+      <span class="attention-chip urgent">⭐ Negative review needs response</span>
+    </div>
+  </div>
+</div>
+
+<!-- NAV -->
+<nav class="nav-wrapper">
+  <div class="nav-pills">
+    <a class="nav-pill" href="#priorities"><span class="dot dot-gold"></span>Top 3</a>
+    <a class="nav-pill" href="#appointments"><span class="dot dot-purple"></span>Appointments</a>
+    <a class="nav-pill" href="#revenue"><span class="dot dot-green"></span>Revenue</a>
+    <a class="nav-pill" href="#leads"><span class="dot dot-amber"></span>Leads &amp; Calls</a>
+    <a class="nav-pill" href="#todo"><span class="dot dot-red"></span>My To-Do</a>
+    <a class="nav-pill" href="#staff"><span class="dot dot-purple"></span>Staff</a>
+    <a class="nav-pill" href="#events"><span class="dot dot-pink"></span>Events</a>
+    <a class="nav-pill" href="#inventory"><span class="dot dot-amber"></span>Inventory</a>
+    <a class="nav-pill" href="#marketing"><span class="dot dot-green"></span>Marketing</a>
+    <a class="nav-pill" href="#reviews"><span class="dot dot-gold"></span>Reviews</a>
+    <a class="nav-pill" href="#finances"><span class="dot dot-purple"></span>Finances</a>
+  </div>
+</nav>
+
+<!-- PAGE -->
+<main class="page">
+
+  <!-- ─────────────────────────── -->
+  <!-- AI TOP 3 PRIORITIES         -->
+  <!-- ─────────────────────────── -->
+  <section class="section" id="priorities">
+    <div class="section-header">
+      <div class="section-icon">✨</div>
+      <div>
+        <div class="section-title">AI Top 3 Priorities</div>
+        <div class="section-desc">What needs your focus most today &mdash; generated each morning.</div>
+      </div>
+    </div>
+    <div class="divider"></div>
+    <div class="sample-notice">⚡ Sample Data — connects to your live systems at activation</div>
+
+    <div class="priority-card">
+      <div class="priority-num">1</div>
+      <div>
+        <div class="priority-title">Post your laser model call TODAY</div>
+        <div class="priority-body">Friday's laser demo is in 3 days and you have no confirmed models yet. Post to your Facebook and Instagram stories this morning. Use the caption WIM already drafted in your content calendar.</div>
+      </div>
+    </div>
+
+    <div class="priority-card">
+      <div class="priority-num">2</div>
+      <div>
+        <div class="priority-title">Respond to the 1-star Google review before noon</div>
+        <div class="priority-body">A new negative review was posted yesterday evening. A same-day response signals professionalism to every future client who reads it. Your response draft is in the Reviews section below.</div>
+      </div>
+    </div>
+
+    <div class="priority-card">
+      <div class="priority-num">3</div>
+      <div>
+        <div class="priority-title">Follow up with 3 leads who didn't book after inquiry</div>
+        <div class="priority-body">Kayla M., Brittany T., and one unknown caller from Monday have not booked. A simple "Did you have any questions?" text today converts on average 1 in 3. Names and numbers in Leads section.</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ─────────────────────────── -->
+  <!-- APPOINTMENTS                -->
+  <!-- ─────────────────────────── -->
+  <section class="section" id="appointments">
+    <div class="section-header">
+      <div class="section-icon">📅</div>
+      <div>
+        <div class="section-title">Today's Appointments</div>
+        <div class="section-desc">Schedule, openings, cancellations, and VIP clients.</div>
+      </div>
+    </div>
+    <div class="divider"></div>
+    <div class="sample-notice">⚡ Sample Data — Planned source: Mangomint. Connection pending verification.</div>
+
+    <div class="flex-between mb-12">
+      <div class="small">Tuesday, August 19 &middot; 8 appointments</div>
+      <div style="display:flex; gap:8px;">
+        <span class="badge badge-green">2 Openings</span>
+        <span class="badge badge-red">1 Cancellation</span>
+        <span class="badge badge-purple">2 VIPs</span>
+      </div>
+    </div>
+
+    <div class="appt-row vip">
+      <div class="appt-time">9:00a</div>
+      <div class="appt-info">
+        <div class="appt-name">Sarah D. ⭐ VIP</div>
+        <div class="appt-service">Laser Hair Removal — Full Legs &middot; 90 min &middot; $380</div>
+      </div>
+      <div class="appt-badge"><span class="badge badge-purple">VIP</span></div>
+    </div>
+
+    <div class="appt-row">
+      <div class="appt-time">10:30a</div>
+      <div class="appt-info">
+        <div class="appt-name">Jennifer M.</div>
+        <div class="appt-service">HydraFacial &middot; 60 min &middot; $175</div>
+      </div>
+      <div class="appt-badge"><span class="badge badge-green">Confirmed</span></div>
+    </div>
+
+    <div class="appt-row open">
+      <div class="appt-time">11:30a</div>
+      <div class="appt-info">
+        <div class="appt-name">— Open Slot —</div>
+        <div class="appt-service">Available &middot; 60–90 min opening</div>
+      </div>
+      <div class="appt-badge"><span class="badge badge-green">Available</span></div>
+    </div>
+
+    <div class="appt-row cancelled">
+      <div class="appt-time">1:00p</div>
+      <div class="appt-info">
+        <div class="appt-name">Melissa R. <em style="font-size:11px;">(Cancelled)</em></div>
+        <div class="appt-service">Brow Lamination &middot; 45 min &middot; $95</div>
+      </div>
+      <div class="appt-badge"><span class="badge badge-red">Cancelled</span></div>
+    </div>
+
+    <div class="appt-row">
+      <div class="appt-time">2:00p</div>
+      <div class="appt-info">
+        <div class="appt-name">Taylor K.</div>
+        <div class="appt-service">Lip Filler Consult &middot; 30 min &middot; Complimentary</div>
+      </div>
+      <div class="appt-badge"><span class="badge badge-green">Confirmed</span></div>
+    </div>
+
+    <div class="appt-row vip">
+      <div class="appt-time">3:00p</div>
+      <div class="appt-info">
+        <div class="appt-name">Dana L. ⭐ VIP</div>
+        <div class="appt-service">Morpheus8 Treatment &middot; 90 min &middot; $850</div>
+      </div>
+      <div class="appt-badge"><span class="badge badge-purple">VIP</span></div>
+    </div>
+
+    <div class="appt-row open">
+      <div class="appt-time">5:00p</div>
+      <div class="appt-info">
+        <div class="appt-name">— Open Slot —</div>
+        <div class="appt-service">Available &middot; 30–60 min opening</div>
+      </div>
+      <div class="appt-badge"><span class="badge badge-green">Available</span></div>
+    </div>
+  </section>
+
+  <!-- ─────────────────────────── -->
+  <!-- REVENUE                     -->
+  <!-- ─────────────────────────── -->
+  <section class="section" id="revenue">
+    <div class="section-header">
+      <div class="section-icon">💰</div>
+      <div>
+        <div class="section-title">Revenue Today</div>
+        <div class="section-desc">Booked revenue vs. daily goal.</div>
+      </div>
+    </div>
+    <div class="divider"></div>
+    <div class="sample-notice">⚡ Sample Data — Planned source: Mangomint. Connection pending verification.</div>
+
+    <div class="grid-4" style="margin-bottom:16px;">
+      <div class="card">
+        <div class="card-value" style="color:var(--green);">$1,500</div>
+        <div class="card-label">Booked Today</div>
+        <div class="card-sub">6 confirmed appointments</div>
+      </div>
+      <div class="card">
+        <div class="card-value">$2,000</div>
+        <div class="card-label">Daily Goal</div>
+        <div class="card-sub">Target revenue</div>
+      </div>
+      <div class="card">
+        <div class="card-value" style="color:var(--amber);">$500</div>
+        <div class="card-label">Gap to Goal</div>
+        <div class="card-sub">1–2 open slots available</div>
+      </div>
+      <div class="card">
+        <div class="card-value" style="color:var(--purple);">$9,200</div>
+        <div class="card-label">Week-to-Date</div>
+        <div class="card-sub">Vs. $10,000 weekly goal</div>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="flex-between mb-12">
+        <div class="card-title">Daily Goal Progress</div>
+        <div class="small">75% booked</div>
+      </div>
+      <div class="revenue-bar-wrap">
+        <div class="revenue-bar" style="width:75%;"></div>
+      </div>
+      <div class="revenue-labels">
+        <span>$0</span>
+        <span style="color:var(--green); font-weight:600;">$1,500 booked</span>
+        <span>Goal: $2,000</span>
+      </div>
+      <div class="small mt-12" style="color:var(--amber);">2 open slots today could close the gap. Consider texting your waitlist.</div>
+    </div>
+  </section>
+
+  <!-- ─────────────────────────── -->
+  <!-- LEADS & FOLLOW-UPS          -->
+  <!-- ─────────────────────────── -->
+  <section class="section" id="leads">
+    <div class="section-header">
+      <div class="section-icon">📞</div>
+      <div>
+        <div class="section-title">Leads, Missed Calls &amp; Follow-Ups</div>
+        <div class="section-desc">New inquiries, missed calls, and outstanding follow-ups needing action.</div>
+      </div>
+    </div>
+    <div class="divider"></div>
+    <div class="sample-notice">⚡ Sample Data — connects to your phone system at activation</div>
+
+    <div class="grid-3" style="margin-bottom:16px;">
+      <div class="card">
+        <div class="card-value" style="color:var(--green);">4</div>
+        <div class="card-label">New Leads Today</div>
+      </div>
+      <div class="card">
+        <div class="card-value" style="color:var(--red);">2</div>
+        <div class="card-label">Missed Calls</div>
+        <div class="card-sub">Not yet returned</div>
+      </div>
+      <div class="card">
+        <div class="card-value" style="color:var(--amber);">3</div>
+        <div class="card-label">Outstanding Follow-Ups</div>
+        <div class="card-sub">Inquired, not booked</div>
+      </div>
+    </div>
+
+    <div class="card-sm" style="border-left:3px solid var(--red);">
+      <div class="flex-between">
+        <div>
+          <div class="card-title">Unknown Caller — (480) 555-0147</div>
+          <div class="small">Missed call · Monday 2:34p · No voicemail</div>
+        </div>
+        <span class="badge badge-red">Call Back</span>
+      </div>
+    </div>
+
+    <div class="card-sm" style="border-left:3px solid var(--red);">
+      <div class="flex-between">
+        <div>
+          <div class="card-title">Unknown Caller — (602) 555-0293</div>
+          <div class="small">Missed call · Yesterday 5:12p · Voicemail left</div>
+        </div>
+        <span class="badge badge-red">Call Back</span>
+      </div>
+    </div>
+
+    <div class="card-sm" style="border-left:3px solid var(--amber); margin-top:8px;">
+      <div class="flex-between">
+        <div>
+          <div class="card-title">Kayla M. — Interested in laser package</div>
+          <div class="small">Inquired 3 days ago via Instagram · Not booked</div>
+        </div>
+        <span class="badge badge-amber">Follow Up</span>
+      </div>
+    </div>
+
+    <div class="card-sm" style="border-left:3px solid var(--amber);">
+      <div class="flex-between">
+        <div>
+          <div class="card-title">Brittany T. — Lip filler question</div>
+          <div class="small">Inquired 2 days ago via Facebook · Not booked</div>
+        </div>
+        <span class="badge badge-amber">Follow Up</span>
+      </div>
+    </div>
+
+    <div class="card-sm" style="border-left:3px solid var(--amber);">
+      <div class="flex-between">
+        <div>
+          <div class="card-title">Amanda R. — Asked about memberships</div>
+          <div class="small">Inquired yesterday via website form · Not booked</div>
+        </div>
+        <span class="badge badge-amber">Follow Up</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- ─────────────────────────── -->
+  <!-- OWNER TO-DO LIST            -->
+  <!-- ─────────────────────────── -->
+  <section class="section" id="todo">
+    <div class="section-header">
+      <div class="section-icon">✅</div>
+      <div>
+        <div class="section-title">Owner To-Do List</div>
+        <div class="section-desc">Your personal task list. Check off as you go.</div>
+      </div>
+    </div>
+    <div class="divider"></div>
+
+    <div class="todo-item" onclick="toggleTodo(this)">
+      <div class="todo-check">✓</div>
+      <div class="todo-label">Post laser model call on Facebook and Instagram stories</div>
+      <div class="todo-tag tag-urgent">Urgent</div>
+    </div>
+
+    <div class="todo-item" onclick="toggleTodo(this)">
+      <div class="todo-check">✓</div>
+      <div class="todo-label">Respond to 1-star Google review</div>
+      <div class="todo-tag tag-urgent">Urgent</div>
+    </div>
+
+    <div class="todo-item" onclick="toggleTodo(this)">
+      <div class="todo-check">✓</div>
+      <div class="todo-label">Call back 2 missed callers from Monday/Tuesday</div>
+      <div class="todo-tag tag-today">Today</div>
+    </div>
+
+    <div class="todo-item" onclick="toggleTodo(this)">
+      <div class="todo-check">✓</div>
+      <div class="todo-label">Text Kayla, Brittany, and Amanda — follow up on inquiries</div>
+      <div class="todo-tag tag-today">Today</div>
+    </div>
+
+    <div class="todo-item" onclick="toggleTodo(this)">
+      <div class="todo-check">✓</div>
+      <div class="todo-label">Reorder numbing cream (at critical level)</div>
+      <div class="todo-tag tag-urgent">Urgent</div>
+    </div>
+
+    <div class="todo-item" onclick="toggleTodo(this)">
+      <div class="todo-check">✓</div>
+      <div class="todo-label">Pay rent before end of week</div>
+      <div class="todo-tag tag-today">Due Friday</div>
+    </div>
+
+    <div class="todo-item" onclick="toggleTodo(this)">
+      <div class="todo-check">✓</div>
+      <div class="todo-label">Brief team on Julie's vacation coverage next week</div>
+      <div class="todo-tag tag-week">This Week</div>
+    </div>
+
+    <div class="todo-item" onclick="toggleTodo(this)">
+      <div class="todo-check">✓</div>
+      <div class="todo-label">Drop 5–10 spa photos into Instagram shared folder</div>
+      <div class="todo-tag tag-week">Weekly</div>
+    </div>
+  </section>
+
+  <!-- ─────────────────────────── -->
+  <!-- STAFF                       -->
+  <!-- ─────────────────────────── -->
+  <section class="section" id="staff">
+    <div class="section-header">
+      <div class="section-icon">👩‍💼</div>
+      <div>
+        <div class="section-title">Staff &amp; Schedule</div>
+        <div class="section-desc">Who's working today, upcoming PTO, and team milestones.</div>
+      </div>
+    </div>
+    <div class="divider"></div>
+    <div class="sample-notice">⚡ Sample Data — update with your actual team at activation</div>
+
+    <div style="font-size:12px; font-weight:700; letter-spacing:0.07em; text-transform:uppercase; color:var(--green); margin-bottom:10px;">Working Today</div>
+
+    <div class="staff-row">
+      <div class="staff-avatar">MC</div>
+      <div>
+        <div class="staff-name">Michelle Campbell</div>
+        <div class="staff-role">Owner · Full day</div>
+      </div>
+      <div class="staff-right"><span class="badge badge-green">In</span></div>
+    </div>
+
+    <div class="staff-row">
+      <div class="staff-avatar">AS</div>
+      <div>
+        <div class="staff-name">Ashley S.</div>
+        <div class="staff-role">Esthetician · 9a–5p</div>
+      </div>
+      <div class="staff-right"><span class="badge badge-green">In</span></div>
+    </div>
+
+    <div class="staff-row">
+      <div class="staff-avatar">KR</div>
+      <div>
+        <div class="staff-name">Kacie R.</div>
+        <div class="staff-role">Front Desk · 10a–6p</div>
+      </div>
+      <div class="staff-right"><span class="badge badge-green">In</span></div>
+    </div>
+
+    <div class="staff-row" style="opacity:0.6;">
+      <div class="staff-avatar" style="background:var(--amber-pale); color:var(--amber);">JT</div>
+      <div>
+        <div class="staff-name">Julie T.</div>
+        <div class="staff-role">Laser Technician · Off today</div>
+      </div>
+      <div class="staff-right"><span class="badge badge-gray">Off</span></div>
+    </div>
+
+    <div style="font-size:12px; font-weight:700; letter-spacing:0.07em; text-transform:uppercase; color:var(--amber); margin:18px 0 10px;">Upcoming PTO</div>
+
+    <div class="staff-row" style="background:var(--amber-pale); border-color:rgba(198,124,0,0.2);">
+      <div class="staff-avatar" style="background:var(--amber-pale); color:var(--amber);">JT</div>
+      <div>
+        <div class="staff-name">Julie T. — On Vacation</div>
+        <div class="staff-role">Aug 25–29 · Laser schedule needs coverage</div>
+      </div>
+      <div class="staff-right"><span class="badge badge-amber">Plan Coverage</span></div>
+    </div>
+
+    <div style="font-size:12px; font-weight:700; letter-spacing:0.07em; text-transform:uppercase; color:var(--pink); margin:18px 0 10px;">Birthdays &amp; Anniversaries</div>
+
+    <div class="bday-chip">
+      <div class="bday-icon">🎂</div>
+      <div>
+        <div class="bday-name">Ashley S. — Birthday</div>
+        <div class="bday-detail">August 22 · 3 days away — don't forget to celebrate her!</div>
+      </div>
+    </div>
+
+    <div class="bday-chip" style="background:var(--purple-pale); border-color:rgba(75,0,130,0.15);">
+      <div class="bday-icon">🎉</div>
+      <div>
+        <div class="bday-name">Kacie R. — 2-Year Work Anniversary</div>
+        <div class="bday-detail">September 1 · Coming up next month</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ─────────────────────────── -->
+  <!-- IMPORTANT EVENTS            -->
+  <!-- ─────────────────────────── -->
+  <section class="section" id="events">
+    <div class="section-header">
+      <div class="section-icon">📌</div>
+      <div>
+        <div class="section-title">Important Dates &amp; Events</div>
+        <div class="section-desc">Trainings, vendor meetings, community events, team meetings, and product launches.</div>
+      </div>
+    </div>
+    <div class="divider"></div>
+    <div class="sample-notice">⚡ Sample Data — update with your actual calendar at activation</div>
+
+    <div class="event-row" style="background:var(--red-pale); border-color:rgba(176,48,48,0.2);">
+      <div class="event-date-block">
+        <div class="event-month">Aug</div>
+        <div class="event-day" style="color:var(--red);">22</div>
+      </div>
+      <div class="event-info">
+        <div class="event-name">Laser Demo — Model Call Friday</div>
+        <div class="event-detail">Need models confirmed by Thursday · Post on social TODAY</div>
+      </div>
+      <span class="badge badge-red">3 Days</span>
+    </div>
+
+    <div class="event-row">
+      <div class="event-date-block">
+        <div class="event-month">Aug</div>
+        <div class="event-day">26</div>
+      </div>
+      <div class="event-info">
+        <div class="event-name">Love Society Event</div>
+        <div class="event-detail">Community networking · Bring business cards and before/after photos</div>
+      </div>
+      <span class="badge badge-purple">Next Week</span>
+    </div>
+
+    <div class="event-row">
+      <div class="event-date-block">
+        <div class="event-month">Sep</div>
+        <div class="event-day">5</div>
+      </div>
+      <div class="event-info">
+        <div class="event-name">Team Meeting — September Planning</div>
+        <div class="event-detail">Monthly all-team · Review September specials + schedule</div>
+      </div>
+      <span class="badge badge-gray">Sep 5</span>
+    </div>
+
+    <div class="event-row">
+      <div class="event-date-block">
+        <div class="event-month">Sep</div>
+        <div class="event-day">12</div>
+      </div>
+      <div class="event-info">
+        <div class="event-name">Laser Training — Advanced Certification</div>
+        <div class="event-detail">Off-site · Confirm team attendance and coverage plan</div>
+      </div>
+      <span class="badge badge-purple">Upcoming</span>
+    </div>
+
+    <div class="event-row">
+      <div class="event-date-block">
+        <div class="event-month">Sep</div>
+        <div class="event-day">20</div>
+      </div>
+      <div class="event-info">
+        <div class="event-name">Product Launch — Fall Skincare Line</div>
+        <div class="event-detail">New skincare collection drops · Prep promotions and social content</div>
+      </div>
+      <span class="badge badge-gold">Launch</span>
+    </div>
+  </section>
+
+  <!-- ─────────────────────────── -->
+  <!-- INVENTORY                   -->
+  <!-- ─────────────────────────── -->
+  <section class="section" id="inventory">
+    <div class="section-header">
+      <div class="section-icon">📦</div>
+      <div>
+        <div class="section-title">Inventory Alerts</div>
+        <div class="section-desc">Items that need attention before they become a problem.</div>
+      </div>
+    </div>
+    <div class="divider"></div>
+    <div class="sample-notice">⚡ Sample Data — update with your actual inventory at activation</div>
+
+    <div style="font-size:12px; font-weight:700; letter-spacing:0.07em; text-transform:uppercase; color:var(--red); margin-bottom:10px;">Critical — Reorder Now</div>
+
+    <div class="inv-row critical">
+      <div>
+        <div class="inv-name">Numbing Cream (BLT)</div>
+        <div class="inv-detail">2 tubes remaining · Used daily · 3–5 day ship time</div>
+      </div>
+      <span class="badge badge-red">Reorder Today</span>
+    </div>
+
+    <div style="font-size:12px; font-weight:700; letter-spacing:0.07em; text-transform:uppercase; color:var(--amber); margin:14px 0 10px;">Low — Order This Week</div>
+
+    <div class="inv-row low">
+      <div>
+        <div class="inv-name">HydraFacial Serums (Cleanse/Peel)</div>
+        <div class="inv-detail">4 sessions remaining · Reorder threshold: 5</div>
+      </div>
+      <span class="badge badge-amber">Order Soon</span>
+    </div>
+
+    <div class="inv-row low">
+      <div>
+        <div class="inv-name">Disposable Laser Eye Shields</div>
+        <div class="inv-detail">~20 pairs remaining · Bulk order recommended</div>
+      </div>
+      <span class="badge badge-amber">Order Soon</span>
+    </div>
+
+    <div style="font-size:12px; font-weight:700; letter-spacing:0.07em; text-transform:uppercase; color:var(--green); margin:14px 0 10px;">Well Stocked</div>
+
+    <div class="inv-row">
+      <div>
+        <div class="inv-name">Morpheus8 Tips</div>
+        <div class="inv-detail">12 tips in stock · Good for ~6 weeks</div>
+      </div>
+      <span class="badge badge-green">Good</span>
+    </div>
+
+    <div class="inv-row">
+      <div>
+        <div class="inv-name">Lip Filler (Juvederm Ultra)</div>
+        <div class="inv-detail">8 syringes · Good for 3–4 weeks</div>
+      </div>
+      <span class="badge badge-green">Good</span>
+    </div>
+  </section>
+
+  <!-- ─────────────────────────── -->
+  <!-- MARKETING                   -->
+  <!-- ─────────────────────────── -->
+  <section class="section" id="marketing">
+    <div class="section-header">
+      <div class="section-icon">📣</div>
+      <div>
+        <div class="section-title">Marketing &amp; Campaign Performance</div>
+        <div class="section-desc">Reminders, active campaigns, and this week's content performance.</div>
+      </div>
+    </div>
+    <div class="divider"></div>
+    <div class="sample-notice">⚡ Sample Data — connects to social platforms at activation</div>
+
+    <div class="card card-gold mb-12">
+      <div class="card-title">📆 Marketing Reminder — August Special</div>
+      <div style="font-size:13px; color:var(--text-mid); margin-top:4px;">
+        August laser promo ends in <strong>12 days</strong>. Push a reminder post this week — the Friday post slot in your content calendar is already written and ready to go.
+      </div>
+    </div>
+
+    <div class="grid-4" style="margin-bottom:16px;">
+      <div class="mkt-card">
+        <div class="mkt-num">2.4K</div>
+        <div class="mkt-label">Instagram Reach</div>
+        <div class="mkt-trend">↑ 18% vs last week</div>
+      </div>
+      <div class="mkt-card">
+        <div class="mkt-num">186</div>
+        <div class="mkt-label">FB Post Engagements</div>
+        <div class="mkt-trend">↑ 12% vs last week</div>
+      </div>
+      <div class="mkt-card">
+        <div class="mkt-num">9</div>
+        <div class="mkt-label">Link Clicks to Book</div>
+        <div class="mkt-trend">↑ 3 from last week</div>
+      </div>
+      <div class="mkt-card">
+        <div class="mkt-num">3</div>
+        <div class="mkt-label">Bookings from Social</div>
+        <div class="mkt-trend">This week so far</div>
+      </div>
+    </div>
+
+    <div class="card-sm">
+      <div class="flex-between">
+        <div>
+          <div class="card-title">Today's scheduled post — Instagram &amp; Facebook</div>
+          <div class="small">"Your skin deserves a day off from covering up…" · Publishes at 8:00am</div>
+        </div>
+        <span class="badge badge-green">Scheduled ✓</span>
+      </div>
+    </div>
+
+    <div class="card-sm">
+      <div class="flex-between">
+        <div>
+          <div class="card-title">TikTok script for this week — Ready</div>
+          <div class="small">Emailed to you Sunday · "What I wish clients knew before their first laser…"</div>
+        </div>
+        <span class="badge badge-amber">Film When Ready</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- ─────────────────────────── -->
+  <!-- GOOGLE REVIEWS              -->
+  <!-- ─────────────────────────── -->
+  <section class="section" id="reviews">
+    <div class="section-header">
+      <div class="section-icon">⭐</div>
+      <div>
+        <div class="section-title">New Google Reviews</div>
+        <div class="section-desc">Latest reviews — respond to all within 24 hours when possible.</div>
+      </div>
+    </div>
+    <div class="divider"></div>
+    <div class="sample-notice">⚡ Sample Data — connects to Google Business Profile at activation</div>
+
+    <div class="review-row needs-response">
+      <div class="review-header">
+        <div>
+          <div class="review-name">Anonymous Reviewer</div>
+          <div class="review-date">Posted yesterday &middot; Needs response</div>
+        </div>
+        <span class="badge badge-red">Respond Today</span>
+      </div>
+      <div class="review-stars">★☆☆☆☆</div>
+      <div class="review-body" style="margin-top:8px;">"Waited 20 minutes past my appointment time and no one came to check on me. The treatment itself was fine but the experience felt disorganized."</div>
+      <div style="margin-top:10px; padding:10px 12px; background:var(--purple-pale); border-radius:6px; font-size:12px; color:var(--text-mid);">
+        <strong style="color:var(--purple);">Suggested response:</strong> "Hi, thank you for taking the time to share your experience. We sincerely apologize for the wait — this is not the standard we hold ourselves to at Arizona Beauty House. We'd love the opportunity to make it right. Please reach out to us directly at [phone] so we can connect with you personally."
+      </div>
+    </div>
+
+    <div class="review-row">
+      <div class="review-header">
+        <div>
+          <div class="review-name">Sarah D.</div>
+          <div class="review-date">Posted 2 days ago</div>
+        </div>
+        <span class="badge badge-green">Responded ✓</span>
+      </div>
+      <div class="review-stars">★★★★★</div>
+      <div class="review-body" style="margin-top:8px;">"Michelle and her team are incredible. My skin has never looked better since starting laser. I tell everyone to come here. Best investment I've ever made."</div>
+    </div>
+
+    <div class="review-row">
+      <div class="review-header">
+        <div>
+          <div class="review-name">Jessica R.</div>
+          <div class="review-date">Posted 4 days ago</div>
+        </div>
+        <span class="badge badge-green">Responded ✓</span>
+      </div>
+      <div class="review-stars">★★★★★</div>
+      <div class="review-body" style="margin-top:8px;">"So professional and the results are amazing. I came in for a consultation and left with a full treatment plan. Felt completely taken care of the whole time."</div>
+    </div>
+  </section>
+
+  <!-- ─────────────────────────── -->
+  <!-- FINANCIAL DASHBOARD         -->
+  <!-- ─────────────────────────── -->
+  <section class="section" id="finances">
+    <div class="section-header">
+      <div class="section-icon">💳</div>
+      <div>
+        <div class="section-title">Financial Dashboard</div>
+        <div class="section-desc">Bills, payments, and weekly cash flow — without opening QuickBooks.</div>
+      </div>
+    </div>
+    <div class="divider"></div>
+    <div class="sample-notice">⚡ Sample Data — update with your actual bills and amounts at activation</div>
+
+    <!-- DUE THIS WEEK -->
+    <div class="bill-section-label" style="color:var(--red);">
+      <span style="width:10px;height:10px;border-radius:50%;background:var(--red);display:inline-block;"></span>
+      Due This Week
+    </div>
+
+    <div class="bill-row" style="border-left:3px solid var(--red);">
+      <div>
+        <div class="bill-name">Rent</div>
+        <div class="bill-due">Due Friday, Aug 22</div>
+      </div>
+      <div class="bill-amount">$3,200</div>
+      <span class="badge badge-red">Pay Now</span>
+    </div>
+
+    <div class="bill-row" style="border-left:3px solid var(--amber);">
+      <div>
+        <div class="bill-name">APS (Electric)</div>
+        <div class="bill-due">Due Thursday, Aug 21 · Auto-pay enrolled</div>
+      </div>
+      <div class="bill-amount">$418</div>
+      <span class="badge badge-amber">Auto-Pay</span>
+    </div>
+
+    <!-- DUE NEXT WEEK -->
+    <div class="bill-section-label" style="color:var(--amber); margin-top:12px;">
+      <span style="width:10px;height:10px;border-radius:50%;background:var(--amber);display:inline-block;"></span>
+      Due Next Week
+    </div>
+
+    <div class="bill-row">
+      <div>
+        <div class="bill-name">Verizon Wireless</div>
+        <div class="bill-due">Due Aug 27</div>
+      </div>
+      <div class="bill-amount">$185</div>
+      <span class="badge badge-gray">Upcoming</span>
+    </div>
+
+    <div class="bill-row">
+      <div>
+        <div class="bill-name">Internet (Cox)</div>
+        <div class="bill-due">Due Aug 28 · Auto-pay enrolled</div>
+      </div>
+      <div class="bill-amount">$89</div>
+      <span class="badge badge-amber">Auto-Pay</span>
+    </div>
+
+    <div class="bill-row">
+      <div>
+        <div class="bill-name">Business Insurance</div>
+        <div class="bill-due">Due Aug 28</div>
+      </div>
+      <div class="bill-amount">$247</div>
+      <span class="badge badge-gray">Upcoming</span>
+    </div>
+
+    <!-- PAID -->
+    <div class="bill-section-label" style="color:var(--green); margin-top:12px;">
+      <span style="width:10px;height:10px;border-radius:50%;background:var(--green);display:inline-block;"></span>
+      Paid This Month
+    </div>
+
+    <div class="bill-row" style="opacity:0.65;">
+      <div>
+        <div class="bill-name">Payroll</div>
+        <div class="bill-due">Paid Aug 15</div>
+      </div>
+      <div class="bill-amount">$4,200</div>
+      <span class="badge badge-green">Paid ✓</span>
+    </div>
+
+    <div class="bill-row" style="opacity:0.65;">
+      <div>
+        <div class="bill-name">Morpheus8 Equipment Payment</div>
+        <div class="bill-due">Paid Aug 1 · Auto-pay</div>
+      </div>
+      <div class="bill-amount">$1,150</div>
+      <span class="badge badge-green">Paid ✓</span>
+    </div>
+
+    <div class="bill-row" style="opacity:0.65;">
+      <div>
+        <div class="bill-name">Water / Trash</div>
+        <div class="bill-due">Paid Aug 5</div>
+      </div>
+      <div class="bill-amount">$72</div>
+      <span class="badge badge-green">Paid ✓</span>
+    </div>
+
+    <div class="bill-row" style="opacity:0.65;">
+      <div>
+        <div class="bill-name">Software Subscriptions (Vagaro, Canva, etc.)</div>
+        <div class="bill-due">Paid Aug 1 · Auto-pay</div>
+      </div>
+      <div class="bill-amount">$195</div>
+      <span class="badge badge-green">Paid ✓</span>
+    </div>
+
+    <!-- CASH FLOW SUMMARY -->
+    <div class="card mt-16 card-gold">
+      <div class="card-title">📊 Weekly Cash Flow Summary</div>
+      <div class="cashflow-grid">
+        <div class="cf-card">
+          <div class="cf-amount" style="color:var(--green);">$12,400</div>
+          <div class="cf-label">Expected Income</div>
+        </div>
+        <div class="cf-card">
+          <div class="cf-amount" style="color:var(--red);">$5,561</div>
+          <div class="cf-label">Expected Expenses</div>
+        </div>
+        <div class="cf-card">
+          <div class="cf-amount" style="color:var(--purple);">$6,839</div>
+          <div class="cf-label">Est. Remaining</div>
+        </div>
+      </div>
+      <div class="small mt-12">Based on confirmed appointments + known bills due this week. Sample data — update at activation.</div>
+    </div>
+  </section>
+
+</main>
+
+<!-- FOOTER -->
+<footer class="footer">
+  <div class="footer-brand">💜 Powered by WIM Intelligence</div>
+  <div class="footer-line">Walk In Miracles LLC &middot; walkinmiracles.org &middot; Built for Arizona Beauty House</div>
+  <div class="footer-scripture">"Not by might, nor by power, but by My Spirit, says the Lord of hosts." — Zechariah 4:6</div>
+</footer>
+
+<script>
+// LIVE CLOCK
+function updateClock() {
+  var now = new Date();
+  var days = ['Sunday','Monday','Tuesday','Wednesday','Thursday','Friday','Saturday'];
+  var months = ['January','February','March','April','May','June','July','August','September','October','November','December'];
+  var d = document.getElementById('live-date');
+  var t = document.getElementById('live-time');
+  if (d) d.textContent = days[now.getDay()] + ', ' + months[now.getMonth()] + ' ' + now.getDate() + ', ' + now.getFullYear();
+  if (t) {
+    var h = now.getHours(), m = now.getMinutes(), s = now.getSeconds();
+    var ampm = h >= 12 ? 'pm' : 'am';
+    h = h % 12 || 12;
+    t.textContent = h + ':' + (m<10?'0'+m:m) + ':' + (s<10?'0'+s:s) + ' ' + ampm;
+  }
+}
+updateClock();
+setInterval(updateClock, 1000);
+
+// TODO TOGGLE
+function toggleTodo(el) {
+  el.classList.toggle('done');
+  var check = el.querySelector('.todo-check');
+  if (el.classList.contains('done')) {
+    check.textContent = '✓';
+    check.style.background = 'var(--green)';
+    check.style.borderColor = 'var(--green)';
+  } else {
+    check.textContent = '';
+    check.style.background = '';
+    check.style.borderColor = '';
+  }
+}
+
+// ACTIVE NAV ON SCROLL
+(function() {
+  var sections = document.querySelectorAll('section[id]');
+  var pills = document.querySelectorAll('.nav-pill');
+  var obs = new IntersectionObserver(function(entries) {
+    entries.forEach(function(e) {
+      if (e.isIntersecting) {
+        pills.forEach(function(p) { p.classList.remove('active'); });
+        var a = document.querySelector('.nav-pill[href="#' + e.target.id + '"]');
+        if (a) {
+          a.classList.add('active');
+          a.scrollIntoView({ behavior:'smooth', block:'nearest', inline:'center' });
+        }
+      }
+    });
+  }, { rootMargin:'-35% 0px -60% 0px' });
+  sections.forEach(function(s) { obs.observe(s); });
+})();
+</script>
+
+</body>
+</html>
